@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCart, checkoutWithVNPay, checkoutWithCOD, removeItemFromCart } from "../services/CartService";
+import { getCart, checkoutWithVNPay, removeItemFromCart } from "../services/CartService";
 import { useNavigate } from "react-router-dom";
 import { Button, Card, Divider, Empty, Spin, Badge } from "antd";
 import { FaShoppingCart, FaTrash, FaCreditCard, FaMoneyBillWave } from "react-icons/fa";
@@ -65,25 +65,8 @@ const Cart = () => {
         }
     };
 
-    // Xử lý thanh toán khi nhận hàng (COD)
-    const handleCODCheckout = async () => {
-        try {
-            if (!cart || cart.items.length === 0) {
-                toast.warn("Giỏ hàng của bạn đang trống!");
-                return;
-            }
-            const response = await checkoutWithCOD();
-            if (response.status === 201) {
-                toast.success("Đơn hàng của bạn đã được đặt thành công! Hãy chuẩn bị nhận hàng.");
-                setTimeout(() => navigate("/orders"), 2000);
-            } else {
-                toast.error("Đặt hàng thất bại. Vui lòng thử lại!");
-            }
-        } catch (error) {
-            console.error("Lỗi thanh toán COD:", error);
-            toast.error("Đã xảy ra lỗi khi đặt hàng!");
-        }
-    };
+   
+    
 
     // Tính tổng giá trị giỏ hàng
     const calculateTotal = () => {
@@ -185,15 +168,7 @@ const Cart = () => {
                         >
                             Thanh toán bằng VNPAY
                         </Button>
-                        <Button
-                            size="large"
-                            block
-                            icon={<FaMoneyBillWave className="mr-2" />}
-                            onClick={handleCODCheckout}
-                            className="bg-green-500 text-white h-14 text-lg"
-                        >
-                            Thanh toán khi nhận hàng
-                        </Button>
+                    
                     </div>
                 )}
             </div>
