@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "67d70c78f832de097dc13d5c"
+  },
+  "name": "Cetaphil",
+  "description": "thương hiệu tuyệt vời",
+  "createdAt": {
+    "$date": "2025-03-16T17:38:00.999Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70cfaf832de097dc13d63"
+  },
+  "name": "Paula's Choice",
+  "description": "thương hiệu uy tín số 1",
+  "createdAt": {
+    "$date": "2025-03-16T17:40:10.005Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70d58f832de097dc13d6e"
+  },
+  "name": "Neutrogena",
+  "description": "thương hiệu tốt",
+  "createdAt": {
+    "$date": "2025-03-16T17:41:44.100Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70d9cf832de097dc13d75"
+  },
+  "name": "Kiehl's",
+  "description": "thương hiệu skincare",
+  "createdAt": {
+    "$date": "2025-03-16T17:42:52.012Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70dc1f832de097dc13d7c"
+  },
+  "name": "Thayers Witch",
+  "description": "thương hiệu tuyệt vời",
+  "createdAt": {
+    "$date": "2025-03-16T17:43:29.453Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70dd7f832de097dc13d83"
+  },
+  "name": "Clinique",
+  "description": "thương hiệu mĩ phẩm",
+  "createdAt": {
+    "$date": "2025-03-16T17:43:51.523Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70e37f832de097dc13d8a"
+  },
+  "name": "CeraVe",
+  "description": "thương hiệu uy tín",
+  "createdAt": {
+    "$date": "2025-03-16T17:45:27.237Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70e5af832de097dc13d91"
+  },
+  "name": "Klairs",
+  "description": "thương hiệu chăm sóc da",
+  "createdAt": {
+    "$date": "2025-03-16T17:46:02.888Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70e7ef832de097dc13d98"
+  },
+  "name": "Vichy",
+  "description": "thương hiệu cao cấp",
+  "createdAt": {
+    "$date": "2025-03-16T17:46:38.408Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70ed1f832de097dc13d9f"
+  },
+  "name": "Mamonde",
+  "description": "thương hiệu đến từ Hàn Quốc",
+  "createdAt": {
+    "$date": "2025-03-16T17:48:01.471Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d70ee8f832de097dc13da6"
+  },
+  "name": "La Roche-Posay",
+  "description": "thương hiệu đến từ Pháp",
+  "createdAt": {
+    "$date": "2025-03-16T17:48:24.054Z"
+  },
+  "__v": 0
+}]

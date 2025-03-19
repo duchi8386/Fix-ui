@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "67cf19ae3eecd91ca4601e91",
+    "fullName": "Nguyễn Văn A",
+    "email": "nguyenvana@example.com",
+    "password": "$2b$10$LJU8c0nVRuJUxMgDJM6Rq.xzdFbFBjua6A95nA7.xYXMthn3hLOwG",
+    "phoneNumber": "0123456789",
+    "address": "123 Đường ABC, Hà Nội",
+    "points": 0,
+    "orderHistory": [],
+    "role": "USER",
+    "createdAt": "2025-03-10T16:56:14.926Z",
+    "__v": 0,
+    "skinType": "67cf140359c90d14b4538cb6"
+  },
+  {
+    "_id": "67cf1a083eecd91ca4601e95",
+    "fullName": "Tran Duc Thinh",
+    "email": "thinhtran@gmail.com",
+    "password": "$2b$10$EJSbmj12V4I7nh1wzg/XWuYzj90wRIAea6jWy2/.4MQqAyaPAUMxu",
+    "phoneNumber": "0123456789",
+    "address": "123 Đường ABC, Hà Nội",
+    "points": 0,
+    "orderHistory": [],
+    "role": "ADMIN",
+    "createdAt": "2025-03-10T16:57:44.240Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d16514175db56f66d1f3e2",
+    "fullName": "Trần Thịnh",
+    "email": "thinhtran9797yb@gmail.com",
+    "password": "$2b$10$5u0RVTHXNMX4MHUML//LlerkfZuX1BepGhJFrBsaYmZV3WNgLhzku",
+    "phoneNumber": "0342617981",
+    "address": "326 cụm 4 thôn 3 xã Thạch Hòa huyện Thạch Thất",
+    "points": 0,
+    "orderHistory": [],
+    "role": "USER",
+    "createdAt": "2025-03-12T10:42:28.358Z",
+    "__v": 0,
+    "skinType": "67cf140359c90d14b4538cb7"
+  },
+  {
+    "_id": "67d2ecb9833f51c28512b662",
+    "fullName": "Trần Thịnh",
+    "email": "thinh@gmail.com",
+    "password": "$2b$10$J3aJENjCS1UjZ9LOoNvEyu1hNNeapr0o5YbCJJguDOTugiDiY/yxK",
+    "phoneNumber": "0342617981",
+    "address": "326 cụm 4 thôn 3 xã Thạch Hòa huyện Thạch Thất",
+    "points": 0,
+    "orderHistory": [],
+    "role": "USER",
+    "createdAt": "2025-03-13T14:33:29.315Z",
+    "__v": 0,
+    "skinType": "67cf140359c90d14b4538cba"
+  }
+]

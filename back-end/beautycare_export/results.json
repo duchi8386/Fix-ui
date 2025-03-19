@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "67d185d7f1514f86061a1566",
+    "user": "67d16514175db56f66d1f3e2",
+    "quiz": "67cffe16dc7b54c0044d2937",
+    "skinType": "dry",
+    "score": 27,
+    "recommendedRoutine": "67d1680be8364faafb7e6638",
+    "createdAt": "2025-03-12T13:02:15.483Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d193d8e714dfd2c0f1e68c",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "quiz": "67cffe16dc7b54c0044d2937",
+    "skinType": "oily",
+    "score": 28,
+    "recommendedRoutine": "67d1680be8364faafb7e6632",
+    "createdAt": "2025-03-12T14:02:00.293Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d2ece1833f51c28512b6ab",
+    "user": "67d2ecb9833f51c28512b662",
+    "quiz": "67cffe16dc7b54c0044d2937",
+    "skinType": "normal",
+    "score": 34,
+    "recommendedRoutine": "67d1680be8364faafb7e664a",
+    "createdAt": "2025-03-13T14:34:09.019Z",
+    "__v": 0
+  }
+]

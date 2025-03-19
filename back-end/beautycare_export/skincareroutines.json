@@ -1,0 +1,197 @@
+[
+  {
+    "_id": "67d1680be8364faafb7e6632",
+    "name": "Routine cho oil",
+    "skinType": "67cf140359c90d14b4538cb6",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Rửa mặt với sữa rửa mặt phù hợp.",
+        "product": "67d106a2824f4912966f1747",
+        "_id": "67d1984db7bc0423742634c8"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Dùng toner để cân bằng da.",
+        "product": "67d1008f824f4912966f1737",
+        "_id": "67d1680be8364faafb7e6634"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Sử dụng serum để nuôi dưỡng da.",
+        "product": "67d1073f824f4912966f1749",
+        "_id": "67d1680be8364faafb7e6635"
+      },
+      {
+        "stepNumber": 4,
+        "description": "Dưỡng ẩm với kem dưỡng ẩm phù hợp.",
+        "product": "67d10149824f4912966f1739",
+        "_id": "67d1680be8364faafb7e6636"
+      },
+      {
+        "stepNumber": 5,
+        "description": "Bôi kem chống nắng để bảo vệ da.",
+        "product": "67d10367824f4912966f173f",
+        "_id": "67d1680be8364faafb7e6637"
+      }
+    ],
+    "createdAt": "2025-03-12T10:55:07.580Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d1680be8364faafb7e6638",
+    "name": "Routine cho dry",
+    "skinType": "67cf140359c90d14b4538cb7",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Rửa mặt với sữa rửa mặt phù hợp.",
+        "product": "67d0ffdf824f4912966f1735",
+        "_id": "67d1680be8364faafb7e6639"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Dùng toner để cân bằng da.",
+        "product": "67d13f24adec9d4f0502587a",
+        "_id": "67d1680be8364faafb7e663a"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Sử dụng serum để nuôi dưỡng da.",
+        "product": "67d1073f824f4912966f1749",
+        "_id": "67d1680be8364faafb7e663b"
+      },
+      {
+        "stepNumber": 4,
+        "description": "Dưỡng ẩm với kem dưỡng ẩm phù hợp.",
+        "product": "67d105fd824f4912966f1745",
+        "_id": "67d1680be8364faafb7e663c"
+      },
+      {
+        "stepNumber": 5,
+        "description": "Bôi kem chống nắng để bảo vệ da.",
+        "product": null,
+        "_id": "67d1680be8364faafb7e663d"
+      }
+    ],
+    "createdAt": "2025-03-12T10:55:07.583Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d1680be8364faafb7e663e",
+    "name": "Routine cho combination",
+    "skinType": "67cf140359c90d14b4538cb8",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Rửa mặt với sữa rửa mặt phù hợp.",
+        "product": "67d10457824f4912966f1741",
+        "_id": "67d1680be8364faafb7e663f"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Dùng toner để cân bằng da.",
+        "product": "67d102e8824f4912966f173d",
+        "_id": "67d1680be8364faafb7e6640"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Sử dụng serum để nuôi dưỡng da.",
+        "product": "67d1073f824f4912966f1749",
+        "_id": "67d1680be8364faafb7e6641"
+      },
+      {
+        "stepNumber": 4,
+        "description": "Dưỡng ẩm với kem dưỡng ẩm phù hợp.",
+        "product": "67d107bb824f4912966f174b",
+        "_id": "67d1680be8364faafb7e6642"
+      },
+      {
+        "stepNumber": 5,
+        "description": "Bôi kem chống nắng để bảo vệ da.",
+        "product": null,
+        "_id": "67d1680be8364faafb7e6643"
+      }
+    ],
+    "createdAt": "2025-03-12T10:55:07.585Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d1680be8364faafb7e6644",
+    "name": "Routine cho sensitive",
+    "skinType": "67cf140359c90d14b4538cb9",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Rửa mặt với sữa rửa mặt phù hợp.",
+        "product": "67d1979dc658d0fd647320ec",
+        "_id": "67d1680be8364faafb7e6645"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Dùng toner để cân bằng da.",
+        "product": "67d13f24adec9d4f0502587a",
+        "_id": "67d1680be8364faafb7e6646"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Sử dụng serum để nuôi dưỡng da.",
+        "product": "67d1073f824f4912966f1749",
+        "_id": "67d1680be8364faafb7e6647"
+      },
+      {
+        "stepNumber": 4,
+        "description": "Dưỡng ẩm với kem dưỡng ẩm phù hợp.",
+        "product": "67d10367824f4912966f173f",
+        "_id": "67d1680be8364faafb7e6648"
+      },
+      {
+        "stepNumber": 5,
+        "description": "Bôi kem chống nắng để bảo vệ da.",
+        "product": null,
+        "_id": "67d1680be8364faafb7e6649"
+      }
+    ],
+    "createdAt": "2025-03-12T10:55:07.586Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d1680be8364faafb7e664a",
+    "name": "Routine cho normal",
+    "skinType": "67cf140359c90d14b4538cba",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "Rửa mặt với sữa rửa mặt phù hợp.",
+        "product": "67d10457824f4912966f1741",
+        "_id": "67d1680be8364faafb7e664b"
+      },
+      {
+        "stepNumber": 2,
+        "description": "Dùng toner để cân bằng da.",
+        "product": "67d102e8824f4912966f173d",
+        "_id": "67d1680be8364faafb7e664c"
+      },
+      {
+        "stepNumber": 3,
+        "description": "Sử dụng serum để nuôi dưỡng da.",
+        "product": "67d1073f824f4912966f1749",
+        "_id": "67d1680be8364faafb7e664d"
+      },
+      {
+        "stepNumber": 4,
+        "description": "Dưỡng ẩm với kem dưỡng ẩm phù hợp.",
+        "product": "67d105fd824f4912966f1745",
+        "_id": "67d1680be8364faafb7e664e"
+      },
+      {
+        "stepNumber": 5,
+        "description": "Bôi kem chống nắng để bảo vệ da.",
+        "product": null,
+        "_id": "67d1680be8364faafb7e664f"
+      }
+    ],
+    "createdAt": "2025-03-12T10:55:07.587Z",
+    "__v": 0
+  }
+]

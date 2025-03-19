@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "67cf140359c90d14b4538cb6",
+    "name": "oily",
+    "description": "Da dầu có xu hướng tiết nhiều bã nhờn, dễ bị bóng nhờn và nổi mụn."
+  },
+  {
+    "_id": "67cf140359c90d14b4538cb7",
+    "name": "dry",
+    "description": "Da khô thiếu độ ẩm, dễ bị bong tróc và cảm giác căng rát."
+  },
+  {
+    "_id": "67cf140359c90d14b4538cb8",
+    "name": "combination",
+    "description": "Da hỗn hợp có vùng chữ T nhiều dầu trong khi hai bên má lại khô."
+  },
+  {
+    "_id": "67cf140359c90d14b4538cb9",
+    "name": "sensitive",
+    "description": "Da nhạy cảm dễ bị kích ứng, mẩn đỏ khi tiếp xúc với các sản phẩm không phù hợp."
+  },
+  {
+    "_id": "67cf140359c90d14b4538cba",
+    "name": "normal",
+    "description": "Da thường có độ cân bằng tốt, không quá dầu cũng không quá khô."
+  }
+]

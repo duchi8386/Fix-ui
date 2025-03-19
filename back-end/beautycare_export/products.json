@@ -1,0 +1,304 @@
+[
+  {
+    "_id": "67d0ffdf824f4912966f1735",
+    "name": "Sữa rửa mặt Cetaphil Gentle Skin Cleanser",
+    "description": "Sữa rửa mặt dịu nhẹ giúp làm sạch da mà không gây khô, phù hợp cho da dầu.",
+    "price": 125000,
+    "category": "cleanser",
+    "ingredients": [
+      "Nước",
+      " Cetyl Alcohol",
+      " Propylene Glycol",
+      " Sodium Lauryl Sulfate"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb6"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741750238/products/of99w7pmi4ynevob5vqp.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:30:39.702Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d1008f824f4912966f1737",
+    "name": "Toner Paula's Choice Pore Reducing",
+    "description": "Nước hoa hồng giúp thu nhỏ lỗ chân lông và kiểm soát dầu thừa.",
+    "price": 300000,
+    "category": "toner",
+    "ingredients": [
+      "Nước",
+      " Niacinamide",
+      " Acetyl Glucosamine"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb6"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741750414/products/iandiq8o6j0syirquui8.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:33:35.952Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d10149824f4912966f1739",
+    "name": "Kem dưỡng ẩm Neutrogena Hydro Boost Water Gel",
+    "description": "Kem dưỡng ẩm dạng gel giúp cung cấp độ ẩm mà không gây nhờn rít.",
+    "price": 400000,
+    "category": "moisturizer",
+    "ingredients": [
+      "Water",
+      " Dimethicone",
+      " Glycerin",
+      " Sodium Hyaluronate"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb6"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741750600/products/f8vkxgktkmkgw1y0nhc3.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:36:41.449Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d1025c824f4912966f173b",
+    "name": "Sữa rửa mặt Kiehl's Calendula Deep Cleansing Foaming Face Wash",
+    "description": "Sữa rửa mặt tạo bọt với chiết xuất hoa cúc giúp làm sạch sâu mà không gây khô da",
+    "price": 400000,
+    "category": "cleanser",
+    "ingredients": [
+      "Nước",
+      " Glycerin",
+      " Calendula Flower Extract"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb8"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741750875/products/a6elnkm52zhjkjyinszy.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:41:16.015Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d102e8824f4912966f173d",
+    "name": "Toner Thayers Witch Hazel Alcohol-Free",
+    "description": "Nước hoa hồng không cồn với chiết xuất cây phỉ giúp cân bằng da.",
+    "price": 250000,
+    "category": "toner",
+    "ingredients": [
+      "Water",
+      " Glycerin",
+      " Witch Hazel Extract",
+      " Aloe Vera"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb8"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741751015/products/sach3otzzzxaf2jyko4u.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:43:36.536Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d10367824f4912966f173f",
+    "name": "Kem dưỡng ẩm Clinique Moisture Surge 72-Hour Auto-Replenishing Hydrator",
+    "description": "Kem dưỡng ẩm gel-cream giúp cung cấp độ ẩm suốt 72 giờ.",
+    "price": 320000,
+    "category": "moisturizer",
+    "ingredients": [
+      "Water",
+      " Glycerin",
+      " Aloe Barbadensis Leaf Water"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb8"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741751142/products/dsd2lrzfvnnqnmddjztr.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:45:43.676Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d10457824f4912966f1741",
+    "name": "Sữa rửa mặt CeraVe Hydrating Cleanser",
+    "description": "Sữa rửa mặt cung cấp độ ẩm với ceramides và hyaluronic acid.",
+    "price": 220000,
+    "category": "cleanser",
+    "ingredients": [
+      "Water",
+      " Glycerin",
+      " Ceramide NP",
+      " Hyaluronic Acid"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb7"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741751382/products/utq3odfmjdrv6pjaln3p.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:49:43.116Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d1056a824f4912966f1743",
+    "name": "Toner Klairs Supple Preparation Unscented",
+    "description": "Nước hoa hồng không mùi giúp cân bằng độ ẩm và làm dịu da.",
+    "price": 200000,
+    "category": "toner",
+    "ingredients": [
+      "Water",
+      " Butylene Glycol",
+      " Beta-Glucan"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb7"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741751657/products/nkjbeul5gfe072oleckh.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:54:18.788Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d105fd824f4912966f1745",
+    "name": "Kem dưỡng ẩm Kiehl's Ultra Facial Cream",
+    "description": "Kem dưỡng ẩm cung cấp độ ẩm suốt 24 giờ, giúp da mềm mại và mịn màng.",
+    "price": 900000,
+    "category": "moisturizer",
+    "ingredients": [
+      "Water",
+      " Squalane",
+      " Glycerin",
+      " Imperata Cylindrica Root Extract"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb7"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741751804/products/cibig1ar1j4cpkptcjmg.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:56:45.654Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d106a2824f4912966f1747",
+    "name": "Sữa rửa mặt tạo bọt CeraVe",
+    "description": "Sữa rửa mặt dịu nhẹ giúp loại bỏ dầu thừa, bụi bẩn và lớp trang điểm, đồng thời duy trì độ ẩm cho da.",
+    "price": 325000,
+    "category": "cleanser",
+    "ingredients": [
+      "Water",
+      " Ceramide NP",
+      " Hyaluronic Acid",
+      " Glycerin"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cba"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741751969/products/wuecj4pyu8oi39x9oqxq.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T03:59:30.437Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d1073f824f4912966f1749",
+    "name": "Serum Vichy Mineral 89",
+    "description": "Serum khoáng phục hồi chuyên sâu, cung cấp độ ẩm và tăng cường hàng rào bảo vệ da.",
+    "price": 725000,
+    "category": "serum",
+    "ingredients": [
+      "Water",
+      " Glycerin",
+      " Butylene Glycol",
+      " Hyaluronic Acid"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cba"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741752126/products/eu4l68ytggjw88lv9utb.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T04:02:07.421Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d107bb824f4912966f174b",
+    "name": "Kem dưỡng ẩm Clinique Moisture Surge 100H",
+    "description": "Kem dưỡng ẩm cung cấp độ ẩm suốt 100 giờ, giúp da mềm mại và mịn màng.",
+    "price": 850000,
+    "category": "moisturizer",
+    "ingredients": [
+      "Water",
+      " Aloe Vera",
+      " Glycerin",
+      " Hyaluronic Acid"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cba"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741752249/products/d8rewfzqw1mw5gv7xuey.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T04:04:11.165Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d13f24adec9d4f0502587a",
+    "name": "Mamonde Pore Clean Toner",
+    "description": "Nước cân bằng giúp làm sạch sâu và se khít lỗ chân lông, phù hợp cho da dầu nhờn\r\n",
+    "price": 250000,
+    "category": "toner",
+    "ingredients": [
+      "Bùn non West Coast",
+      " Chiết xuất rau diếp cá"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb6"
+    ],
+    "rating": 0,
+    "stock": 23000,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741766435/products/zkzwnzbzuyhlk7o7snsu.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T08:00:36.118Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d1979dc658d0fd647320ec",
+    "name": "La Roche-Posay Toleriane Purifying Foaming Cleanser",
+    "description": "Gel rửa mặt giúp loại bỏ bụi bẩn, tạp chất và bã nhờn dư thừa trên da hiệu quả.",
+    "price": 250000,
+    "category": "cleanser",
+    "ingredients": [
+      "Nước",
+      " Glycerin",
+      " Niacinamide",
+      " Ceramide-3"
+    ],
+    "skinType": [
+      "67cf140359c90d14b4538cb6"
+    ],
+    "rating": 0,
+    "stock": 50,
+    "imageUrl": "https://res.cloudinary.com/dnm1hfesq/image/upload/v1741789084/products/wpq2jmrc9snk0zjrtcd7.jpg",
+    "status": "active",
+    "createdAt": "2025-03-12T14:18:05.137Z",
+    "__v": 0
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "_id": "67cfe2840d344cf9744145d7",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cf9d9e63d3b21de963816c",
+    "rating": 5,
+    "comment": "San pham oke",
+    "createdAt": "2025-03-11T07:13:08.374Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff0e7b016ec7f2984cb25",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cf20a8215b31b9efce3041",
+    "rating": 5,
+    "comment": "qua oke",
+    "createdAt": "2025-03-11T08:14:31.532Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff17db016ec7f2984cb3f",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cf20a8215b31b9efce3041",
+    "rating": 5,
+    "comment": "dadada",
+    "createdAt": "2025-03-11T08:17:01.997Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff18db016ec7f2984cb4c",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cf20a8215b31b9efce3041",
+    "rating": 5,
+    "comment": "dasdasdsa",
+    "createdAt": "2025-03-11T08:17:17.113Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff270b016ec7f2984cb63",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cf9d9e63d3b21de963816c",
+    "rating": 1,
+    "comment": "khong oke cho lam",
+    "createdAt": "2025-03-11T08:21:04.888Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff3f1b016ec7f2984cb70",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cf9d9e63d3b21de963816c",
+    "rating": 5,
+    "comment": "thinh",
+    "createdAt": "2025-03-11T08:27:29.791Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff524b016ec7f2984cb7d",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cf9d9e63d3b21de963816c",
+    "rating": 5,
+    "comment": "đâsdas",
+    "createdAt": "2025-03-11T08:32:36.781Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff578b016ec7f2984cb8a",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cf9d9e63d3b21de963816c",
+    "rating": 5,
+    "comment": "đâs",
+    "createdAt": "2025-03-11T08:34:00.055Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff5ebb016ec7f2984cb9f",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cfb659d8b2061ee7d5b1dd",
+    "rating": 5,
+    "comment": "đâs",
+    "createdAt": "2025-03-11T08:35:55.301Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff816b016ec7f2984cba2",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cfb659d8b2061ee7d5b1dd",
+    "rating": 5,
+    "comment": "đâs",
+    "createdAt": "2025-03-11T08:45:10.080Z",
+    "__v": 0
+  },
+  {
+    "_id": "67cff832b016ec7f2984cbaf",
+    "user": "67cf19ae3eecd91ca4601e91",
+    "product": "67cfb659d8b2061ee7d5b1dd",
+    "rating": 5,
+    "comment": "dsadasd",
+    "createdAt": "2025-03-11T08:45:38.531Z",
+    "__v": 0
+  },
+  {
+    "_id": "67d271d8225d63742036d1a7",
+    "user": "67d16514175db56f66d1f3e2",
+    "product": "67d10367824f4912966f173f",
+    "rating": 5,
+    "comment": "dep\n",
+    "createdAt": "2025-03-13T05:49:12.051Z",
+    "__v": 0
+  }
+]
