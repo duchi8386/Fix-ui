@@ -298,7 +298,7 @@ const ProductList = () => {
                                                         </span>
                                                     )}
                                                 </p>
-                                                <FiShoppingCart className="text-blue-500 hover:text-blue-600" />
+                                                {/* <FiShoppingCart className="text-blue-500 hover:text-blue-600" /> */}
                                             </div>
                                         </div>
                                     </div>
@@ -359,8 +359,8 @@ const ProductList = () => {
                                     key={i}
                                     onClick={() => setPage(pageNum)}
                                     className={`w-10 h-10 mx-1 flex items-center justify-center rounded-md ${isCurrentPage
-                                            ? 'bg-blue-500 text-white'
-                                            : 'bg-white text-gray-700 hover:bg-gray-100'
+                                        ? 'bg-blue-500 text-white'
+                                        : 'bg-white text-gray-700 hover:bg-gray-100'
                                         }`}
                                 >
                                     {pageNum}
@@ -374,8 +374,8 @@ const ProductList = () => {
                                 <button
                                     onClick={() => setPage(totalPages)}
                                     className={`w-10 h-10 mx-1 flex items-center justify-center rounded-md ${page === totalPages
-                                            ? 'bg-blue-500 text-white'
-                                            : 'bg-white text-gray-700 hover:bg-gray-100'
+                                        ? 'bg-blue-500 text-white'
+                                        : 'bg-white text-gray-700 hover:bg-gray-100'
                                         }`}
                                 >
                                     {totalPages}

@@ -226,7 +226,7 @@ export const Header = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <div className="relative">
+                  {/* <div className="relative">
                     <input
                       className="w-56 bg-gray-50 border border-gray-200 rounded-full py-2 pl-4 pr-10 text-sm focus:ring-2 focus:ring-purple-300 focus:border-purple-500 focus:bg-white transition-all"
                       type="search"
@@ -242,7 +242,7 @@ export const Header = () => {
                     >
                       <FaSearch />
                     </motion.button>
-                  </div>
+                  </div> */}
                 </motion.form>
               )}
 
@@ -256,7 +256,7 @@ export const Header = () => {
                 >
                   <Link to="/cart" className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 text-gray-700 hover:bg-purple-50 hover:text-purple-600 hover:-translate-y-1 shadow-sm transition-all">
                     <FaShoppingCart />
-                    <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs text-white font-bold bg-gradient-to-r from-pink-500 to-purple-600 rounded-full shadow-sm">0</span>
+                    {/* <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs text-white font-bold bg-gradient-to-r from-pink-500 to-purple-600 rounded-full shadow-sm">0</span> */}
                   </Link>
                 </motion.div>
               )}
