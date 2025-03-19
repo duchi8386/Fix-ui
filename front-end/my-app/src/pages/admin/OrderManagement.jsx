@@ -1,118 +1,192 @@
 import { useEffect, useState } from "react";
-import { getOrderListByAdmin, changeStatusOrder } from "../../services/OrderService.js";
-import { FaSyncAlt } from "react-icons/fa";
+import {
+  getOrderListByAdmin,
+  changeStatusOrder,
+} from "../../services/OrderService.js";
+import {
+  Table,
+  Select,
+  Button,
+  Typography,
+  Card,
+  Tag,
+  Space,
+  Layout,
+  Breadcrumb,
+  message,
+} from "antd";
+import { SyncOutlined, ShoppingOutlined } from "@ant-design/icons";
+import { motion } from "framer-motion";
+
+const { Title } = Typography;
+const { Option } = Select;
+const { Content } = Layout;
 
 export default function OrderManagement() {
-    const [orders, setOrders] = useState([]);
-    const [statusFilter, setStatusFilter] = useState("");
-    const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
-    const statuses = ["Pending", "Processing", "Shipped", "Completed", "Cancelled"];
+  const [orders, setOrders] = useState([]);
+  const [statusFilter, setStatusFilter] = useState("");
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const statuses = [
+    "Pending",
+    "Processing",
+    "Shipped",
+    "Completed",
+    "Cancelled",
+  ];
 
-    useEffect(() => {
-        loadOrders();
-    }, [statusFilter, page]);
-
-    const loadOrders = async () => {
-        try {
-            const response = await getOrderListByAdmin(statusFilter, page, 5);
-            setOrders(response.data.data);
-            setTotalPages(response.data.pagination.totalPages);
-        } catch (error) {
-            console.error("Lỗi khi tải đơn hàng", error);
-        }
+  const getStatusColor = (status) => {
+    const colors = {
+      Pending: "gold",
+      Processing: "blue",
+      Shipped: "cyan",
+      Completed: "green",
+      Cancelled: "red",
     };
+    return colors[status] || "default";
+  };
 
-    const handleStatusChange = async (orderId, newStatus) => {
-        try {
-            await changeStatusOrder(orderId, newStatus);
-            loadOrders(); // Refresh danh sách
-        } catch (error) {
-            console.error("Lỗi cập nhật trạng thái", error);
-        }
-    };
+  const columns = [
+    {
+      title: "Mã Đơn",
+      dataIndex: "_id",
+      key: "_id",
+      width: 100,
+      align: "center",
+    },
+    {
+      title: "Khách Hàng",
+      dataIndex: "user",
+      key: "user",
+      align: "center",
+      render: (user) => user?.fullName || "N/A",
+    },
+    {
+      title: "Sản phẩm",
+      dataIndex: "products",
+      key: "products",
+      render: (products) => (
+        <ul style={{ listStyle: "none", padding: 0 }}>
+          {products.map((item, index) => (
+            <li key={index} style={{ marginBottom: 8 }}>
+              <Tag color="blue">{item.product?.name}</Tag>
+              <span>
+                {item.quantity} x {item.product?.price.toLocaleString()} VND
+              </span>
+            </li>
+          ))}
+        </ul>
+      ),
+    },
+    {
+      title: "Tổng Tiền",
+      dataIndex: "totalAmount",
+      key: "totalAmount",
+      align: "center",
+      render: (totalAmount) => `${totalAmount.toLocaleString()} VND`,
+    },
+    {
+      title: "Trạng Thái",
+      dataIndex: "status",
+      key: "status",
+      align: "center",
+      render: (status, record) => (
+        <Select
+          value={status}
+          onChange={(newStatus) => handleStatusChange(record._id, newStatus)}
+          style={{ width: 120 }}
+        >
+          {statuses.map((status) => (
+            <Option key={status} value={status}>
+              <Tag color={getStatusColor(status)}>{status}</Tag>
+            </Option>
+          ))}
+        </Select>
+      ),
+    },
+  ];
 
-    return (
-        <div className="max-w-5xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-            <h1 className="text-3xl font-bold text-center mb-6">Quản Lý Đơn Hàng</h1>
+  useEffect(() => {
+    loadOrders();
+  }, [statusFilter, page]);
 
-            {/* Bộ lọc trạng thái */}
-            <div className="mb-4 flex justify-between">
-                <select
-                    className="border p-2 rounded"
-                    value={statusFilter}
-                    onChange={(e) => setStatusFilter(e.target.value)}
-                >
-                    <option value="">Tất cả trạng thái</option>
-                    {statuses.map((status) => (
-                        <option key={status} value={status}>{status}</option>
-                    ))}
-                </select>
-                <button onClick={loadOrders} className="p-2 bg-blue-600 text-white rounded">
-                    <FaSyncAlt /> Làm mới
-                </button>
-            </div>
+  const loadOrders = async () => {
+    setLoading(true);
+    try {
+      const response = await getOrderListByAdmin(statusFilter, page, 5);
+      setOrders(response.data.data);
+      setTotalPages(response.data.pagination.totalPages);
+    } catch (error) {
+      console.error("Lỗi khi tải đơn hàng", error);
+      message.error("Lỗi khi tải đơn hàng");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-            {/* Bảng hiển thị đơn hàng */}
-            <table className="w-full border">
-                <thead>
-                <tr className="bg-gray-200">
-                    <th className="border p-2">Mã Đơn</th>
-                    <th className="border p-2">Khách Hàng</th>
-                    <th className="border p-2">Sản phẩm</th>
-                    <th className="border p-2">Tổng Tiền</th>
-                    <th className="border p-2">Trạng Thái</th>
-                </tr>
-                </thead>
-                <tbody>
-                {orders.map((order) => (
-                    <tr key={order._id} className="border">
-                        <td className="border p-2">{order._id}</td>
-                        <td className="border p-2">{order.user?.fullName || "N/A"}</td>
-                        <td className="border p-2">
-                            <ul>
-                                {order.products.map((item, index) => (
-                                    <li key={index}>
-                                        {item.product?.name} - {item.quantity} x {item.product?.price.toLocaleString()} VND
-                                    </li>
-                                ))}
-                            </ul>
-                        </td>
-                        <td className="border p-2">{order.totalAmount.toLocaleString()} VND</td>
-                        <td className="border p-2">
-                            <select
-                                className="border p-1 rounded"
-                                value={order.status}
-                                onChange={(e) => handleStatusChange(order._id, e.target.value)}
-                            >
-                                {statuses.map((status) => (
-                                    <option key={status} value={status}>{status}</option>
-                                ))}
-                            </select>
-                        </td>
-                    </tr>
-                ))}
-                </tbody>
-            </table>
+  const handleStatusChange = async (orderId, newStatus) => {
+    try {
+      await changeStatusOrder(orderId, newStatus);
+      loadOrders(); // Refresh danh sách
+      message.success("Cập nhật trạng thái thành công");
+    } catch (error) {
+      console.error("Lỗi cập nhật trạng thái", error);
+      message.error("Lỗi cập nhật trạng thái");
+    }
+  };
 
-            {/* Phân trang */}
-            <div className="flex justify-center mt-4">
-                <button
-                    onClick={() => setPage(page - 1)}
-                    disabled={page <= 1}
-                    className="p-2 mx-1 bg-gray-300 rounded disabled:opacity-50"
-                >
-                    &larr; Trước
-                </button>
-                <span className="p-2">{page} / {totalPages}</span>
-                <button
-                    onClick={() => setPage(page + 1)}
-                    disabled={page >= totalPages}
-                    className="p-2 mx-1 bg-gray-300 rounded disabled:opacity-50"
-                >
-                    Sau &rarr;
-                </button>
-            </div>
-        </div>
-    );
+  return (
+    <Layout style={{ padding: "0 24px 24px" }}>
+      <Breadcrumb style={{ margin: "16px 0" }}>
+        <Breadcrumb.Item>Trang Chủ</Breadcrumb.Item>
+        <Breadcrumb.Item>Quản Lý Đơn Hàng</Breadcrumb.Item>
+      </Breadcrumb>
+      <Content
+        style={{
+          padding: 24,
+          margin: 0,
+          minHeight: 280,
+        }}
+      >
+        <Card>
+          <Title level={2} style={{ textAlign: "center" }}>
+            Quản Lý Đơn Hàng
+          </Title>
+
+          {/* Bộ lọc trạng thái */}
+          <Space style={{ marginBottom: 16 }}>
+            <Select
+              value={statusFilter}
+              onChange={(value) => setStatusFilter(value)}
+              style={{ width: 200 }}
+            >
+              <Option value="">Tất cả trạng thái</Option>
+              {statuses.map((status) => (
+                <Option key={status} value={status}>
+                  {status}
+                </Option>
+              ))}
+            </Select>
+            <Button onClick={loadOrders} icon={<SyncOutlined />}>
+              Làm mới
+            </Button>
+          </Space>
+
+          {/* Bảng hiển thị đơn hàng */}
+          <Table
+            columns={columns}
+            dataSource={orders}
+            rowKey="_id"
+            pagination={{
+              current: page,
+              total: totalPages * 5,
+              onChange: (page) => setPage(page),
+            }}
+            loading={loading}
+          />
+        </Card>
+      </Content>
+    </Layout>
+  );
 }

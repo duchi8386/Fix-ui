@@ -1,91 +1,150 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { 
+  Table, 
+  Input, 
+  Card, 
+  Typography, 
+  Rate, 
+  Tag, 
+  Layout, 
+  Breadcrumb,
+  Space 
+} from "antd";
+import { 
+  SearchOutlined, 
+  CommentOutlined 
+} from "@ant-design/icons";
+import { motion } from "framer-motion";
+
+const { Title } = Typography;
+const { Content } = Layout;
 
 export default function ReviewList() {
-    const [reviews, setReviews] = useState([]);
-    const [search, setSearch] = useState("");
-    const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
+  const [reviews, setReviews] = useState([]);
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        loadReviews();
-    }, [search, page]);
+  useEffect(() => {
+    loadReviews();
+  }, [search, page]);
 
-    const loadReviews = async () => {
-        try {
-            const response = await axios.get(`http://localhost:9999/reviews/all-reviews?search=${search}&page=${page}&limit=5`, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`,
-                }
-            });
-            setReviews(response.data.data);
-            setTotalPages(response.data.pagination.totalPages);
-        } catch (error) {
-            console.error("Lỗi khi tải đánh giá", error);
+  const loadReviews = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `http://localhost:9999/reviews/all-reviews?search=${search}&page=${page}&limit=5`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
-    };
+      );
+      setReviews(response.data.data);
+      setTotalPages(response.data.pagination.totalPages);
+    } catch (error) {
+      console.error("Lỗi khi tải đánh giá", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    return (
-        <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-            <h1 className="text-2xl font-bold text-center mb-4">Danh Sách Đánh Giá</h1>
+  const columns = [
+    {
+      title: "Người Đánh Giá",
+      dataIndex: ["user", "fullName"],
+      key: "user",
+      align: "center",
+      render: (text) => <Tag color="blue">{text || "N/A"}</Tag>
+    },
+    {
+      title: "Sản Phẩm",
+      dataIndex: ["product", "name"],
+      key: "product",
+      align: "center",
+      render: (text) => <Tag color="cyan">{text || "N/A"}</Tag>
+    },
+    {
+      title: "Số Sao",
+      dataIndex: "rating",
+      key: "rating",
+      align: "center",
+      render: (rating) => <Rate disabled defaultValue={rating} />
+    },
+    {
+      title: "Nhận Xét",
+      dataIndex: "comment",
+      key: "comment",
+      align: "center",
+      render: (text) => (
+        <div style={{ maxWidth: 300, margin: '0 auto' }}>
+          {text || "Không có nhận xét"}
+        </div>
+      )
+    },
+    {
+      title: "Ngày",
+      dataIndex: "createdAt",
+      key: "createdAt",
+      align: "center",
+      render: (date) => (
+        <Tag color="purple">
+          {new Date(date).toLocaleDateString()}
+        </Tag>
+      )
+    }
+  ];
 
-            {/* Ô tìm kiếm */}
-            <input
-                type="text"
+  return (
+    <Layout style={{ padding: '24px', minHeight: '100vh', background: '#f0f2f5' }}>
+      <Content>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card>
+            <Breadcrumb style={{ marginBottom: 16 }}>
+              <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
+              <Breadcrumb.Item>Reviews</Breadcrumb.Item>
+            </Breadcrumb>
+
+            <Space direction="vertical" size="large" style={{ width: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Title level={2}>
+                  <CommentOutlined /> Danh Sách Đánh Giá
+                </Title>
+              </div>
+
+              <Input
                 placeholder="Tìm kiếm theo tên người dùng hoặc sản phẩm..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="border p-2 rounded w-full mb-4"
-            />
+                prefix={<SearchOutlined />}
+                style={{ marginBottom: 16 }}
+              />
 
-            {/* Danh sách đánh giá */}
-            <table className="w-full border">
-                <thead>
-                <tr className="bg-gray-200">
-                    <th className="border p-2">Người Đánh Giá</th>
-                    <th className="border p-2">Sản Phẩm</th>
-                    <th className="border p-2">Số Sao</th>
-                    <th className="border p-2">Nhận Xét</th>
-                    <th className="border p-2">Ngày</th>
-                </tr>
-                </thead>
-                <tbody>
-                {reviews.length > 0 ? (
-                    reviews.map((review) => (
-                        <tr key={review._id} className="border">
-                            <td className="border p-2">{review.user?.fullName || "N/A"}</td>
-                            <td className="border p-2">{review.product?.name || "N/A"}</td>
-                            <td className="border p-2">{review.rating} ⭐</td>
-                            <td className="border p-2">{review.comment || "Không có nhận xét"}</td>
-                            <td className="border p-2">{new Date(review.createdAt).toLocaleDateString()}</td>
-                        </tr>
-                    ))
-                ) : (
-                    <tr>
-                        <td colSpan="5" className="text-center p-4">Không tìm thấy đánh giá</td>
-                    </tr>
-                )}
-                </tbody>
-            </table>
-
-            {/* Phân trang */}
-            <div className="flex justify-center mt-4">
-                <button
-                    onClick={() => setPage(page - 1)}
-                    disabled={page <= 1}
-                    className="p-2 mx-1 bg-gray-300 rounded disabled:opacity-50"
-                >
-                    &larr; Trước
-                </button>
-                <span className="p-2">{page} / {totalPages}</span>
-                <button
-                    onClick={() => setPage(page + 1)}
-                    disabled={page >= totalPages}
-                    className="p-2 mx-1 bg-gray-300 rounded disabled:opacity-50"
-                >
-                    Sau &rarr;
-                </button>
-            </div>
-        </div>
-    );
+              <Table
+                columns={columns}
+                dataSource={reviews}
+                rowKey="_id"
+                loading={loading}
+                pagination={{
+                  current: page,
+                  total: totalPages * 5,
+                  pageSize: 5,
+                  onChange: (page) => setPage(page),
+                  showSizeChanger: false
+                }}
+                bordered
+                scroll={{ x: 1000 }}
+              />
+            </Space>
+          </Card>
+        </motion.div>
+      </Content>
+    </Layout>
+  );
 }
