@@ -226,23 +226,7 @@ export const Header = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  {/* <div className="relative">
-                    <input
-                      className="w-56 bg-gray-50 border border-gray-200 rounded-full py-2 pl-4 pr-10 text-sm focus:ring-2 focus:ring-purple-300 focus:border-purple-500 focus:bg-white transition-all"
-                      type="search"
-                      placeholder="Tìm sản phẩm..."
-                      aria-label="Search"
-                    />
-                    <motion.button
-                      className="absolute right-0 top-0 h-full w-10 flex items-center justify-center text-purple-600 hover:text-purple-800 transition-all"
-                      type="submit"
-                      variants={buttonVariants}
-                      whileHover="hover"
-                      whileTap="tap"
-                    >
-                      <FaSearch />
-                    </motion.button>
-                  </div> */}
+
                 </motion.form>
               )}
 
@@ -301,14 +285,8 @@ export const Header = () => {
                         </div>
 
                         <div className="py-1">
-                          <Link to="/profile" className="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 hover:translate-x-1 transition-all" onClick={() => setIsUserMenuOpen(false)}>
-                            <FaUser className="mr-2 text-purple-400" /> Hồ sơ
-                          </Link>
                           <Link to="/orders" className="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 hover:translate-x-1 transition-all" onClick={() => setIsUserMenuOpen(false)}>
                             <FaFirstOrder className="mr-2 text-purple-400" /> Đơn hàng
-                          </Link>
-                          <Link to="/settings" className="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 hover:translate-x-1 transition-all" onClick={() => setIsUserMenuOpen(false)}>
-                            <FaCog className="mr-2 text-purple-400" /> Cài đặt
                           </Link>
                           <hr className="my-1 border-gray-100" />
                           <button onClick={handleLogout} className="w-full text-left flex items-center px-4 py-2 text-red-600 hover:bg-red-50 hover:translate-x-1 transition-all">
@@ -475,33 +453,6 @@ export const Header = () => {
                             </div>
                           </div>
                           <ul className="space-y-1">
-                            <li>
-                              <Link
-                                to="/profile"
-                                className="flex items-center px-3 py-2.5 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-all"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                <FaUser className="mr-3 text-purple-400" /> Hồ sơ
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="/orders"
-                                className="flex items-center px-3 py-2.5 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-all"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                <FaFirstOrder className="mr-3 text-purple-400" /> Đơn hàng
-                              </Link>
-                            </li>
-                            <li>
-                              <Link
-                                to="/settings"
-                                className="flex items-center px-3 py-2.5 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition-all"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                <FaCog className="mr-3 text-purple-400" /> Cài đặt
-                              </Link>
-                            </li>
                             <li>
                               <button
                                 onClick={() => {

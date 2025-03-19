@@ -1,0 +1,240 @@
+[{
+  "_id": {
+    "$oid": "67d193d8e714dfd2c0f1e68c"
+  },
+  "user": {
+    "$oid": "67cf19ae3eecd91ca4601e91"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "oily",
+  "score": 28,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e6632"
+  },
+  "createdAt": {
+    "$date": "2025-03-12T14:02:00.293Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d185d7f1514f86061a1566"
+  },
+  "user": {
+    "$oid": "67d16514175db56f66d1f3e2"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "dry",
+  "score": 27,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e6638"
+  },
+  "createdAt": {
+    "$date": "2025-03-12T13:02:15.483Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d2d3c05209ba51f8786b58"
+  },
+  "user": {
+    "$oid": "67d2d3645209ba51f8786ac3"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "oily",
+  "score": 28,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e6632"
+  },
+  "createdAt": {
+    "$date": "2025-03-13T12:46:56.133Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d4fd01988b5c6c598de9db"
+  },
+  "user": {
+    "$oid": "67d4fc65acebe2f041b2b36b"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "normal",
+  "score": 37,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e664a"
+  },
+  "createdAt": {
+    "$date": "2025-03-15T04:07:29.199Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d522f4988b5c6c598dea37"
+  },
+  "user": {
+    "$oid": "67d522e7988b5c6c598de9ee"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "combination",
+  "score": 29,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e663e"
+  },
+  "createdAt": {
+    "$date": "2025-03-15T06:49:24.523Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d5246ad9fa6cac8b6e4d5e"
+  },
+  "user": {
+    "$oid": "67d5244ed9fa6cac8b6e4d14"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "normal",
+  "score": 31,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e664a"
+  },
+  "createdAt": {
+    "$date": "2025-03-15T06:55:38.142Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d6e47c5fbbd2d4d32cb2be"
+  },
+  "user": {
+    "$oid": "67d6e38ce17d4af71624467b"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "normal",
+  "score": 30,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e664a"
+  },
+  "createdAt": {
+    "$date": "2025-03-16T14:47:24.954Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d6e4a55fbbd2d4d32cb32d"
+  },
+  "user": {
+    "$oid": "67d6e247e17d4af71624459c"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "combination",
+  "score": 31,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e663e"
+  },
+  "createdAt": {
+    "$date": "2025-03-16T14:48:05.233Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d6f6ddf3d42180d1514e5f"
+  },
+  "user": {
+    "$oid": "67d6f6b9f3d42180d1514e16"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "combination",
+  "score": 31,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e663e"
+  },
+  "createdAt": {
+    "$date": "2025-03-16T16:05:49.077Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d8f1ffcd0ed6e07dca6060"
+  },
+  "user": {
+    "$oid": "67d8f1e9cd0ed6e07dca6017"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "normal",
+  "score": 27,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e664a"
+  },
+  "createdAt": {
+    "$date": "2025-03-18T04:09:35.116Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67da95b811ca1bc12465639c"
+  },
+  "user": {
+    "$oid": "67d8f39fcd0ed6e07dca638e"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "normal",
+  "score": 34,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e664a"
+  },
+  "createdAt": {
+    "$date": "2025-03-19T10:00:24.466Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67dab98711ca1bc124658410"
+  },
+  "user": {
+    "$oid": "67dab8e211ca1bc12465828b"
+  },
+  "quiz": {
+    "$oid": "67cffe16dc7b54c0044d2937"
+  },
+  "skinType": "normal",
+  "score": 28,
+  "recommendedRoutine": {
+    "$oid": "67d1680be8364faafb7e664a"
+  },
+  "createdAt": {
+    "$date": "2025-03-19T12:33:11.042Z"
+  },
+  "__v": 0
+}]
