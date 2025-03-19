@@ -20,14 +20,13 @@ const SkincareResult = () => {
                 setResult(response.data.data);
             } catch (error) {
                 console.error("Error fetching quiz result:", error);
-                navigate("/login");
             } finally {
                 setLoading(false);
             }
         };
 
         fetchResult();
-    }, [navigate]);
+    }, []);
 
     if (loading) {
         return <p className="text-center text-lg font-semibold">Loading...</p>;

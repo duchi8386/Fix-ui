@@ -8,7 +8,7 @@ export const getProductList = async ({ category = "", skinType = "", page = 1, l
         const res = await axios.get(`${API_URL}/products`, {
             params: { category, skinType, page, limit },
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
             }
         });
         return res.data;

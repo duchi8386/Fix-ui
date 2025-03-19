@@ -7,7 +7,7 @@ const token = localStorage.getItem("token");
 export const getBrands = async () => {
     try {
         const response = await axios.get(`${API_URL}/brand`, {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         return response.data;
     } catch (error) {
@@ -20,7 +20,7 @@ export const getBrands = async () => {
 export const createBrand = async (brandData) => {
     try {
         const response = await axios.post(`${API_URL}/brand`, brandData, {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         return response.data;
     } catch (error) {
@@ -33,7 +33,7 @@ export const createBrand = async (brandData) => {
 export const updateBrand = async (id, brandData) => {
     try {
         const response = await axios.put(`${API_URL}/brand/${id}`, brandData, {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         return response.data;
     } catch (error) {
@@ -46,7 +46,7 @@ export const updateBrand = async (id, brandData) => {
 export const deleteBrand = async (id) => {
     try {
         const response = await axios.delete(`${API_URL}/brand/${id}`, {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         return response.data;
     } catch (error) {
