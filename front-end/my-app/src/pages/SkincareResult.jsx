@@ -58,7 +58,7 @@ const SkincareResult = () => {
                                         src={step.product.imageUrl}
                                         alt={step.product.name}
                                         className="object-cover rounded-lg shadow d-flex justify-content-center"
-                                        style={{height:'100px', width:'150px'}}
+                                        style={{ height: '100px', width: '150px' }}
                                     />
                                     <div>
                                         <h4 className="text-lg font-semibold">{step.product.name}</h4>

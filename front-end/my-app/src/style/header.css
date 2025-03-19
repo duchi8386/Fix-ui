@@ -1,69 +1,81 @@
-.navbar {
-    padding: 15px 0;
+/* Custom styles that complement Tailwind CSS */
+
+/* Active link dot indicator */
+.active-link:after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: #5e48e8;
+  border-radius: 50%;
 }
 
-.logo {
-    height: 50px;
+/* Dropdown arrow animation */
+.user-info:hover svg.dropdown-arrow {
+  transform: rotate(180deg);
 }
 
-.navbar-nav .nav-item .nav-link {
-    font-size: 16px;
-    font-weight: 500;
-    color: #6c757d;
-    transition: 0.3s;
+/* Mobile menu slide animation */
+@media (max-width: 1024px) {
+  .navbar-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navbar-collapse.show {
+    max-height: 1000px;
+  }
+
+  /* For Webkit browsers */
+  .mobile-menu::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .mobile-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .mobile-menu::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 4px;
+  }
+
+  .mobile-menu::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+  }
 }
 
-.navbar-nav .nav-item .nav-link:hover {
-    color: #d63384;
+/* For Framer Motion animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.search-bar {
-    display: flex;
-    align-items: center;
+/* Animation for fade-in content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.search-bar input {
-    width: 200px;
-    border-radius: 20px;
-    padding: 8px 15px;
+/* Improved focus styles for accessibility */
+.form-control:focus-visible {
+  outline: 2px solid #5e48e8;
+  outline-offset: 1px;
 }
 
-.search-bar button {
-    border-radius: 20px;
-    background: #d63384;
-    border: none;
-    padding: 8px 12px;
-    color: white;
-}
-
-.btn-outline-dark {
-    border-radius: 20px;
-    padding: 8px 15px;
-}
-
-.cart-badge {
-    background: red;
-    color: white;
-    font-size: 12px;
-    border-radius: 50%;
-    padding: 3px 8px;
-    margin-left: 5px;
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-    .search-bar {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .navbar-nav {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .d-flex {
-        justify-content: center;
-        margin-top: 10px;
-    }
+/* Button press effect */
+button:active:not(:disabled) {
+  transform: scale(0.97);
 }
