@@ -41,7 +41,6 @@ const Register = () => {
       setIsLoading(false);
     }
   };
-
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
