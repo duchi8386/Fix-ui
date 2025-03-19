@@ -1,190 +1,245 @@
 import { useEffect, useState } from "react";
-import { getProductList, changeStatusProduct } from "../../services/ProductService.js";
+import {
+  getProductList,
+  changeStatusProduct,
+} from "../../services/ProductService.js";
 import { getSkinTypeList } from "../../services/SkinTypeService.js";
 import { useNavigate } from "react-router-dom";
+import {
+  Table,
+  Button,
+  Select,
+  Typography,
+  Space,
+  Alert,
+  Pagination,
+} from "antd";
+import { motion } from "framer-motion";
+
+const { Title } = Typography;
+const { Option } = Select;
 
 export const ProductManagement = () => {
-    const [products, setProducts] = useState([]);
-    const [skinTypes, setSkinTypes] = useState([]);
-    const [selectedSkinType, setSelectedSkinType] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState("");
-    const [currentPage, setCurrentPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
-    const [error, setError] = useState(null);
-    const navigate = useNavigate();
-    const limit = 5; // Số sản phẩm mỗi trang
+  const [products, setProducts] = useState([]);
+  const [skinTypes, setSkinTypes] = useState([]);
+  const [selectedSkinType, setSelectedSkinType] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const limit = 5; // Số sản phẩm mỗi trang
 
-    useEffect(() => {
-        fetchProducts();
-    }, [selectedSkinType, selectedCategory, currentPage]);
+  useEffect(() => {
+    fetchProducts();
+  }, [selectedSkinType, selectedCategory, currentPage]);
 
-    const fetchProducts = async () => {
-        try {
-            const token = localStorage.getItem("token");
-            if (!token) {
-                navigate("/login");
-                return;
-            }
+  const fetchProducts = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        navigate("/login");
+        return;
+      }
 
-            const [productsRes, skinTypesRes] = await Promise.all([
-                getProductList({
-                    skinType: selectedSkinType,
-                    category: selectedCategory,
-                    page: currentPage,
-                    limit
-                }),
-                getSkinTypeList(),
-            ]);
-            setProducts(productsRes.data);
-            setTotalPages(productsRes.pagination.totalPages);
-            setSkinTypes(skinTypesRes.data);
-        } catch (error) {
-            setError(error);
-        }
-    };
+      const [productsRes, skinTypesRes] = await Promise.all([
+        getProductList({
+          skinType: selectedSkinType,
+          category: selectedCategory,
+          page: currentPage,
+          limit,
+        }),
+        getSkinTypeList(),
+      ]);
+      setProducts(productsRes.data);
+      setTotalPages(productsRes.pagination.totalPages);
+      setSkinTypes(skinTypesRes.data);
+    } catch (error) {
+      setError(error);
+    }
+  };
 
-    const formatCurrency = (amount) => {
-        return new Intl.NumberFormat("vi-VN").format(amount);
-    };
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat("vi-VN").format(amount);
+  };
 
-    const handleNextPage = () => {
-        setCurrentPage((prev) => Math.min(prev + 1, totalPages));
-    };
+  const handleView = (productId) => {
+    navigate(`/admin/products/${productId}/view`);
+  };
 
-    const handlePreviousPage = () => {
-        setCurrentPage((prev) => Math.max(prev - 1, 1));
-    };
+  const handleEdit = (productId) => {
+    navigate(`/admin/products/${productId}/edit`);
+  };
 
-    const handleView = (productId) => {
-        navigate(`/admin/products/${productId}/view`);
-    };
+  const handleToggleStatus = async (productId) => {
+    try {
+      await changeStatusProduct(productId);
+      fetchProducts(); // Cập nhật danh sách sản phẩm sau khi thay đổi trạng thái
+    } catch (error) {
+      console.error("Failed to update product status:", error);
+    }
+  };
 
-    const handleEdit = (productId) => {
-        navigate(`/admin/products/${productId}/edit`);
-    };
+  const columns = [
+    {
+      title: "ID",
+      dataIndex: "id",
+      key: "id",
+      align: "center",
+    },
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      align: "center",
+    },
+    {
+      title: "Category",
+      dataIndex: "category",
+      key: "category",
+      align: "center",
+    },
+    {
+      title: "Brand",
+      dataIndex: "brand",
+      key: "brand",
+      align: "center",
+    },
+    {
+      title: "Price",
+      dataIndex: "price",
+      key: "price",
+      align: "center",
+      render: (text) => `${formatCurrency(text)} VND`,
+    },
+    {
+      title: "Stock",
+      dataIndex: "stock",
+      key: "stock",
+      align: "center",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+      align: "center",
+      render: (text) => (
+        <span className={text === "active" ? "text-success" : "text-danger"}>
+          {text}
+        </span>
+      ),
+    },
+    {
+      title: "Actions",
+      key: "actions",
+      align: "center",
+      render: (text, record) => (
+        <Space size="middle">
+          <Button onClick={() => handleView(record.id)}>View</Button>
+          <Button type="primary" onClick={() => handleEdit(record.id)}>
+            Edit
+          </Button>
+          <Button
+            type={record.status === "active" ? "danger" : "success"}
+            onClick={() => handleToggleStatus(record.id)}
+          >
+            {record.status === "active" ? "Deactivate" : "Activate"}
+          </Button>
+        </Space>
+      ),
+    },
+  ];
 
-    const handleToggleStatus = async (productId) => {
-        try {
-            await changeStatusProduct(productId);
-            fetchProducts(); // Cập nhật danh sách sản phẩm sau khi thay đổi trạng thái
-        } catch (error) {
-            console.error("Failed to update product status:", error);
-        }
-    };
+  return (
+    <div style={{ padding: "24px" }}>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Title level={2} style={{ color: "#1890ff" }}>
+          Product Management
+        </Title>
+      </motion.div>
 
-    return (
-        <div className="p-6">
-            <h1 className="text-2xl font-bold mb-4">Product Management</h1>
+      {/* Error Message */}
+      {error && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Alert
+            message="Error"
+            description={error.message}
+            type="error"
+            showIcon
+            closable
+            style={{ marginBottom: "24px" }}
+          />
+        </motion.div>
+      )}
 
-            {/* Bộ lọc */}
-            <div className="flex gap-4 mb-4">
-                <select
-                    value={selectedSkinType}
-                    onChange={(e) => setSelectedSkinType(e.target.value)}
-                    className="border p-2"
-                >
-                    <option value="">All Skin Types</option>
-                    {skinTypes.map((skin) => (
-                        <option style={{ color: "black" }} className="text-primary" key={skin._id} value={skin._id}>
-                            {skin.type}
-                        </option>
-                    ))}
-                </select>
+      {/* Filters */}
+      <div style={{ marginBottom: "24px" }}>
+        <Space size="large">
+          <Select
+            value={selectedSkinType}
+            onChange={(value) => setSelectedSkinType(value)}
+            placeholder="All Skin Types"
+            style={{ width: 200 }}
+          >
+            <Option value="">All Skin Types</Option>
+            {skinTypes.map((skin) => (
+              <Option key={skin._id} value={skin._id}>
+                {skin.type}
+              </Option>
+            ))}
+          </Select>
 
-                <select
-                    value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="border p-2"
-                >
-                    <option value="">All Categories</option>
-                    <option value="cleanser">Cleanser</option>
-                    <option value="serum">Serum</option>
-                    <option value="moisturizer">Moisturizer</option>
-                    <option value="toner">Toner</option>
-                    <option value="sunscreen">Sunscreen</option>
-                </select>
-            </div>
+          <Select
+            value={selectedCategory}
+            onChange={(value) => setSelectedCategory(value)}
+            placeholder="All Categories"
+            style={{ width: 200 }}
+          >
+            <Option value="">All Categories</Option>
+            <Option value="cleanser">Cleanser</Option>
+            <Option value="serum">Serum</Option>
+            <Option value="moisturizer">Moisturizer</Option>
+            <Option value="toner">Toner</Option>
+            <Option value="sunscreen">Sunscreen</Option>
+          </Select>
 
-            <button
-                onClick={() => navigate("/admin/products/new")}
-                className="bg-blue-500 text-danger px-4 py-2 rounded ml-4"
-            >
-                Add Product
-            </button>
+          <Button
+            type="primary"
+            onClick={() => navigate("/admin/products/new")}
+          >
+            Add Product
+          </Button>
+        </Space>
+      </div>
 
-            {/* Bảng sản phẩm */}
-            <table className="w-full mt-4 border-collapse border border-gray-200">
-                <thead>
-                <tr className="bg-gray-100">
-                    <th className="border px-4 py-2">ID</th>
-                    <th className="border px-4 py-2">Name</th>
-                    <th className="border px-4 py-2">Category</th>
-                    <th className="border px-4 py-2">Brand</th>
-                    <th className="border px-4 py-2">Price</th>
-                    <th className="border px-4 py-2">Stock</th>
-                    <th className="border px-4 py-2">Status</th>
-                    <th className="border px-4 py-2">Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                {products.map((product) => (
-                    <tr key={product.id} className="border">
-                        <td className="border px-4 py-2">{product.id}</td>
-                        <td className="border px-4 py-2">{product.name}</td>
-                        <td className="border px-4 py-2">{product.category}</td>
-                        <td className="border px-4 py-2">{product.brand}</td>
-                        <td className="border px-4 py-2">{formatCurrency(product.price)} VND</td>
-                        <td className="border px-4 py-2">{product.stock}</td>
-                        <td className="border px-4 py-2">
-                                <span className={product.status === "active" ? "text-black" : "text-black"}>
-                                    {product.status}
-                                </span>
-                        </td>
-                        <td className="border px-4 py-2">
-                            <button
-                                onClick={() => handleView(product.id)}
-                                className="bg-gray-300 text-black px-2 py-1 rounded mr-2"
-                            >
-                                View
-                            </button>
-                            <button
-                                onClick={() => handleEdit(product.id)}
-                                className="bg-blue-500 text-white px-2 py-1 rounded mr-2"
-                            >
-                                Edit
-                            </button>
-                            <button
-                                onClick={() => handleToggleStatus(product.id)}
-                                className={`px-2 py-1 rounded ${
-                                    product.status === "active" ? "bg-red-500 text-success" : "bg-green-500 text-danger"
-                                }`}
-                            >
-                                {product.status === "active" ? "Deactivate" : "Activate"}
-                            </button>
-                        </td>
-                    </tr>
-                ))}
-                </tbody>
-            </table>
+      {/* Product Table */}
+      <motion.div initial="hidden" animate="visible">
+        <Table
+          columns={columns}
+          dataSource={products}
+          rowKey="id"
+          pagination={false}
+          bordered
+        />
+      </motion.div>
 
-            {/* Phân trang */}
-            <div className="mt-4 flex justify-center">
-                <button
-                    onClick={handlePreviousPage}
-                    disabled={currentPage === 1}
-                    className="px-3 py-1 border mx-1"
-                >
-                    Previous
-                </button>
-                <span className="px-3 py-1">{currentPage} / {totalPages}</span>
-                <button
-                    onClick={handleNextPage}
-                    disabled={currentPage === totalPages}
-                    className="px-3 py-1 border mx-1"
-                >
-                    Next
-                </button>
-            </div>
-        </div>
-    );
+      {/* Pagination */}
+      <div style={{ marginTop: "24px", textAlign: "center" }}>
+        <Pagination
+          current={currentPage}
+          total={totalPages * limit}
+          pageSize={limit}
+          onChange={(page) => setCurrentPage(page)}
+        />
+      </div>
+    </div>
+  );
 };
